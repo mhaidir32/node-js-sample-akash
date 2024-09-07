@@ -50,3 +50,8 @@ jobs:
             vuln-type: 'os,library'
             severity: 'CRITICAL,HIGH'
             output: 'trivy-results.sarif'
+          continue-on-error: true
+        - name: Upload Trivy SARIF Report
+          uses: github/codeql-action/upload-sarif@v2
+          with:
+            sarif_file: 'trivy-results.sarif'
