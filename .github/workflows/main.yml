@@ -51,6 +51,8 @@ jobs:
             severity: 'CRITICAL,HIGH'
             output: 'trivy-results.sarif'
           continue-on-error: true
+        - name: Display structure of downloaded files
+          run: ls -lah
         - name: Upload Trivy SARIF Report
           uses: github/codeql-action/upload-sarif@v2
           with:
@@ -59,5 +61,4 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: 'trivy-results.sarif'
-        - name: Display structure of downloaded files
-          run: ls -R
+        
