@@ -58,7 +58,7 @@ jobs:
         - name: Download artifact from build
           uses: bettermarks/action-artifact-download@0.3.0
           with:
-            artifact_name: 'trivy-results.sarif' 
+            artifact_name: trivy-results.sarif
         - name: Upload Trivy SARIF Report
           uses: github/codeql-action/upload-sarif@v2
           with:
