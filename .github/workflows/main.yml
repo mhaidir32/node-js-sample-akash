@@ -55,11 +55,8 @@ jobs:
           run: ls -lah
         - name: display path
           run: pwd
-        - name: download artifact
-          uses: actions/download-artifact@v4
-          with:
-            path: /home/runner/work/node-js-sample-akash/node-js-sample-akash
-            name: 'trivy-results.sarif'
+        - name: Download a Build Artifact
+          uses: actions/download-artifact@v4.1.8  
         - name: Upload Trivy SARIF Report
           uses: github/codeql-action/upload-sarif@v2
           with:
