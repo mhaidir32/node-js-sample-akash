@@ -43,12 +43,10 @@ jobs:
         - name: Run Trivy vulnerability scanner
           uses: aquasecurity/trivy-action@master
           with:
-            image-ref: 'mhaidir32/node-js-sample-akash:${{ github.sha }}'
-            format: template
-            template: "@/contrib/html.tpl"
-            output: trivy-report.html
+             image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
+            format: 'table'
             exit-code: '1'
             ignore-unfixed: true
             vuln-type: 'os,library'
-            severity: 'MEDIUM'
-          continue-on-error: true             # allow the build to fail, similar to "allow_failure: true" in GitLab
+            severity: 'CRITICAL,HIGH'
+            continue-on-error: true             # allow the build to fail, similar to "allow_failure: true" in GitLab
