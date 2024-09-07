@@ -53,12 +53,16 @@ jobs:
           continue-on-error: true
         - name: Display structure of downloaded files
           run: ls -lah
+        - name: display path
+          run: pwd
+        - name: download artifact
+          uses: actions/download-artifact@v4
+          with:
+            path: .
+            name: 'trivy-results.sarif'
         - name: Upload Trivy SARIF Report
           uses: github/codeql-action/upload-sarif@v2
           with:
             sarif_file: 'trivy-results.sarif'
-        - name: download artifact
-          uses: actions/download-artifact@v4
-          with:
-            name: 'trivy-results.sarif'
+        
         
