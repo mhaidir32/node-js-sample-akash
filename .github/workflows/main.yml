@@ -49,4 +49,3 @@ jobs:
             ignore-unfixed: true
             vuln-type: 'os,library'
             severity: 'CRITICAL,HIGH'
-            continue-on-error: true             # allow the build to fail, similar to "allow_failure: true" in GitLab
