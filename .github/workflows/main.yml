@@ -58,7 +58,6 @@ jobs:
         - name: Download artifact from build
           uses: bettermarks/action-artifact-download@0.3.0
           with:
-            repo: mhaidir32/node-js-sample-akash
             artifact_name: 'trivy-results.sarif' 
         - name: Upload Trivy SARIF Report
           uses: github/codeql-action/upload-sarif@v2
