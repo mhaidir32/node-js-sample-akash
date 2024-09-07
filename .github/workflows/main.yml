@@ -44,7 +44,9 @@ jobs:
           uses: aquasecurity/trivy-action@master
           with:
             image-ref: 'mhaidir32/node-js-sample-akash:${{ github.sha }}'
-            format: 'json'
+            format: template
+            template: "@/contrib/html.tpl"
+            output: trivy-report.html
             exit-code: '1'
             ignore-unfixed: true
             vuln-type: 'os,library'
